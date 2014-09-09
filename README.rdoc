@@ -1,3 +1,5 @@
+-Crippled- Fixed to support Unity3d Web Player restricted framework
+
 = Welcome to NLog
 
 NLog is a free logging platform for .NET with rich log routing and management 
