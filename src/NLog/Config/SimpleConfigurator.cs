@@ -108,9 +108,9 @@ namespace NLog.Config
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Reliability", "CA2000:Dispose objects before losing scope", Justification = "Target is disposed elsewhere.")]
         public static void ConfigureForFileLogging(string fileName, LogLevel minLevel)
         {
-            FileTarget target = new FileTarget();
-            target.FileName = fileName;
-            ConfigureForTargetLogging(target, minLevel);
+            //FileTarget target = new FileTarget();
+            //target.FileName = fileName;
+            //ConfigureForTargetLogging(target, minLevel);
         }
     }
 }

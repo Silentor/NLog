@@ -31,6 +31,9 @@
 // THE POSSIBILITY OF SUCH DAMAGE.
 // 
 
+
+#undef WCF_SUPPORTED
+
 namespace NLog.LogReceiverService
 {
     using System;

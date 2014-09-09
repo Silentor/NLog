@@ -49,9 +49,9 @@ namespace NLog
     using NLog.Internal;
     using NLog.Targets;
 
-#if SILVERLIGHT
-    using System.Windows;
-#endif
+//#if SILVERLIGHT
+//    using System.Windows;
+//#endif
 
     /// <summary>
     /// Creates and manages instances of <see cref="T:NLog.Logger" /> objects.
@@ -156,29 +156,29 @@ namespace NLog
                     {
                         foreach (string configFile in GetCandidateFileNames())
                         {
-#if !SILVERLIGHT && !MONO
+//#if !SILVERLIGHT && !MONO
+                            //if (File.Exists(configFile))
+                            //{
+                            //    InternalLogger.Debug("Attempting to load config from {0}", configFile);
+                            //    this.config = new XmlLoggingConfiguration(configFile);
+                            //    break;
+                            //}
+//#elif SILVERLIGHT
+                            //Uri configFileUri = new Uri(configFile, UriKind.Relative);
+                            //if (Application.GetResourceStream(configFileUri) != null)
+                            //{
+                            //    InternalLogger.Debug("Attempting to load config from {0}", configFile);
+                            //    this.config = new XmlLoggingConfiguration(configFile);
+                            //    break;
+                            //}
+//#else
                             if (File.Exists(configFile))
                             {
                                 InternalLogger.Debug("Attempting to load config from {0}", configFile);
                                 this.config = new XmlLoggingConfiguration(configFile);
                                 break;
                             }
-#elif SILVERLIGHT
-                            Uri configFileUri = new Uri(configFile, UriKind.Relative);
-                            if (Application.GetResourceStream(configFileUri) != null)
-                            {
-                                InternalLogger.Debug("Attempting to load config from {0}", configFile);
-                                this.config = new XmlLoggingConfiguration(configFile);
-                                break;
-                            }
-#else
-                            if (File.Exists(configFile))
-                            {
-                                InternalLogger.Debug("Attempting to load config from {0}", configFile);
-                                this.config = new XmlLoggingConfiguration(configFile);
-                                break;
-                            }
-#endif
+//#endif
                         }
                     }
 

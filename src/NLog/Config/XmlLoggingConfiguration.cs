@@ -31,6 +31,9 @@
 // THE POSSIBILITY OF SUCH DAMAGE.
 // 
 
+
+#undef SILVERLIGHT
+
 namespace NLog.Config
 {
     using System;
@@ -40,7 +43,6 @@ namespace NLog.Config
     using System.Globalization;
     using System.IO;
     using System.Reflection;
-    using System.Windows;
     using System.Xml;
     using NLog.Common;
     using NLog.Filters;
@@ -141,20 +143,20 @@ namespace NLog.Config
         }
 #endif
 
-#if !SILVERLIGHT
-        /// <summary>
-        /// Gets the default <see cref="LoggingConfiguration" /> object by parsing 
-        /// the application configuration file (<c>app.exe.config</c>).
-        /// </summary>
-        public static LoggingConfiguration AppConfig
-        {
-            get
-            {
-                object o = System.Configuration.ConfigurationManager.GetSection("nlog");
-                return o as LoggingConfiguration;
-            }
-        }
-#endif
+//#if !SILVERLIGHT
+//        /// <summary>
+//        /// Gets the default <see cref="LoggingConfiguration" /> object by parsing 
+//        /// the application configuration file (<c>app.exe.config</c>).
+//        /// </summary>
+//        public static LoggingConfiguration AppConfig
+//        {
+//            get
+//            {
+//                object o = System.Configuration.ConfigurationManager.GetSection("nlog");
+//                return o as LoggingConfiguration;
+//            }
+//        }
+//#endif
 
         /// <summary>
         /// Gets or sets a value indicating whether the configuration files

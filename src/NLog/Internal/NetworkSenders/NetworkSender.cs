@@ -31,6 +31,8 @@
 // THE POSSIBILITY OF SUCH DAMAGE.
 // 
 
+#undef SILVERLIGHT
+
 namespace NLog.Internal.NetworkSenders
 {
     using System;

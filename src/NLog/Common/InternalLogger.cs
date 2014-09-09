@@ -317,14 +317,14 @@ namespace NLog.Common
                 string msg = builder.ToString();
 
                 // log to file
-                var logFile = LogFile;
-                if (!string.IsNullOrEmpty(logFile))
-                {
-                    using (var textWriter = File.AppendText(logFile))
-                    {
-                        textWriter.WriteLine(msg);
-                    }
-                }
+                //var logFile = LogFile;
+                //if (!string.IsNullOrEmpty(logFile))
+                //{
+                //    using (var textWriter = File.AppendText(logFile))
+                //    {
+                //        textWriter.WriteLine(msg);
+                //    }
+                //}
 
                 // log to LogWriter
                 var writer = LogWriter;
